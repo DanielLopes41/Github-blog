@@ -1,4 +1,4 @@
-import { useContext, KeyboardEvent } from "react";
+import { useContext } from "react";
 import { Post } from "./Components/Post";
 import { Profile } from "./Components/Profile";
 import { SearchBar } from "./Components/SearchBar";
@@ -26,15 +26,16 @@ interface IssueProps {
 
 export function Home() {
     const { posts, updatePosts, data } = useContext(DataContext);
-
     const reversedPosts = [...posts].reverse();
-
-    function handleSearch(event: KeyboardEvent<HTMLInputElement>) {
-        searchAllIssuesIfInputIsEmpty(event);
-        handleInputChangeOnEnter(event);
+    
+    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+        const inputElement = event.target as HTMLInputElement; 
+        if (inputElement.value === "") {
+            searchAllIssuesIfInputIsEmpty();
+        }
     }
 
-    async function handleInputChangeOnEnter(event: KeyboardEvent<HTMLInputElement>) {
+    async function handleInputChangeOnEnter(event: React.KeyboardEvent<HTMLInputElement>) {
         const inputElement = event.target as HTMLInputElement; 
         if (inputElement.value !== "" && event.key === "Enter") {
             event.preventDefault();
@@ -51,27 +52,24 @@ export function Home() {
                 html_url: issue.html_url,
             }));
 
-            const ReversedPosts = newPosts.reverse();
-            updatePosts(ReversedPosts);
+            const reversedPosts = newPosts.reverse();
+            updatePosts(reversedPosts);
         }
     }
 
-    async function searchAllIssuesIfInputIsEmpty(event: KeyboardEvent<HTMLInputElement>) {
-        const inputElement = event.target as HTMLInputElement; 
-        if (inputElement.value === "") {
-            const response = await api.get(`/search/issues?q=repo:${data.login}/Github-blog`);
-            const issues: Issue[] = response.data.items;
+    async function searchAllIssuesIfInputIsEmpty() {
+        const response = await api.get(`/search/issues?q=repo:${data.login}/Github-blog`);
+        const issues: Issue[] = response.data.items;
 
-            const newPosts: IssueProps[] = issues.map((issue: Issue) => ({
-                id: issue.number,
-                title: issue.title,
-                body: issue.body,
-                comments: issue.comments,
-                created_at: issue.created_at,
-                html_url: issue.html_url,
-            }));
-            updatePosts(newPosts);
-        }
+        const newPosts: IssueProps[] = issues.map((issue: Issue) => ({
+            id: issue.number,
+            title: issue.title,
+            body: issue.body,
+            comments: issue.comments,
+            created_at: issue.created_at,
+            html_url: issue.html_url,
+        }));
+        updatePosts(newPosts);
     }
 
     return (
@@ -82,7 +80,7 @@ export function Home() {
                     <h1>Publicações</h1>
                     <p>{posts.length} {posts.length === 1 ? 'publicação' : 'publicações'}</p>
                 </TextContainer>
-                <SearchBar onChange={handleSearch} />
+                <SearchBar onChange={handleInputChange} onKeyDown={handleInputChangeOnEnter} />
                 <PostContainer>
                     {reversedPosts.map((post) => (
                         <Post 

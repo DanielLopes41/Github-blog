@@ -1,13 +1,18 @@
 import { SearchBarContainer, SearchBarInput } from "./styles";
 
-export function SearchBar({ onChange }) {
+interface SearchBarProps {
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+}
+
+export function SearchBar({ onChange, onKeyDown }: SearchBarProps) {
     return (
         <SearchBarContainer>
             <SearchBarInput 
                 type="text" 
                 placeholder="Buscar Conteúdo" 
                 onChange={onChange} 
-                onKeyDown={onChange} 
+                onKeyDown={onKeyDown} 
             />
         </SearchBarContainer>
     );
