@@ -1,17 +1,17 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Content } from "./styles";
-import { useContext } from "react";
+import { useContext, FormEvent } from "react";
 import { DataContext } from "../../../contexts/DataContext";
 
 export function NewUserMenu() {
   const { setUsername, setRepoName } = useContext(DataContext);
 
-  function handleSubmit(event) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    
-    const name = event.target.username.value;
-    const repoName = event.target.repoName.value;
-    console.log(name, repoName)
+
+    const name = event.currentTarget.username.value;
+    const repoName = event.currentTarget.repoName.value;
+
     setUsername(name);
     setRepoName(repoName);
   }

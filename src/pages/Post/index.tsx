@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PostInfo } from "./PostInfo";
 import { PostPageContainer, TextContainer } from "./styles";
 import { DataContext } from "../../contexts/DataContext";
-import ReactMarkDown from "react-markdown";
+import ReactMarkdown, { Components } from "react-markdown";
 import { useParams } from "react-router-dom";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -18,34 +18,33 @@ export function PostPage() {
         return <p>Post não encontrado</p>;
     }
 
-    const CodeComponent: React.FC<{
-        inline: boolean;
+    const CodeComponent = ({ className, children }: {
         className?: string;
-        children: ReactNode;
-    }> = ({ inline, className, children, ...props }) => {
+        children?: ReactNode; 
+    }) => {
         const match = /language-(\w+)/.exec(className || '');
-        return !inline && match ? (
-            <SyntaxHighlighter style={dracula} language={match[1]} PreTag="div" {...props}>
+        return match ? (
+            <SyntaxHighlighter style={dracula} language={match[1]} PreTag="div">
                 {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>
         ) : (
-            <code className={className} {...props}>
+            <code className={className}>
                 {children}
             </code>
         );
+    };
+
+    const components: Components = {
+        code: CodeComponent,
     };
 
     return (
         <PostPageContainer>
             <PostInfo />
             <TextContainer>
-                <ReactMarkDown
-                    components={{
-                        code: CodeComponent,
-                    }}
-                >
+                <ReactMarkdown components={components}>
                     {post.body}
-                </ReactMarkDown>
+                </ReactMarkdown>
             </TextContainer>
         </PostPageContainer>
     );

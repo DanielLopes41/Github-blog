@@ -35,10 +35,10 @@ export function Home() {
     }
 
     async function handleInputChangeOnEnter(event: KeyboardEvent<HTMLInputElement>) {
-        const inputElement = event.target as HTMLInputElement; // Asserção de tipo
+        const inputElement = event.target as HTMLInputElement; 
         if (inputElement.value !== "" && event.key === "Enter") {
             event.preventDefault();
-            const searchTerm = inputElement.value; // Agora você pode acessar o value sem erro
+            const searchTerm = inputElement.value; 
             const response = await api.get(`/search/issues?q=${searchTerm} repo:${data.login}/Github-blog`);
             const issues: Issue[] = response.data.items;
 
@@ -57,7 +57,7 @@ export function Home() {
     }
 
     async function searchAllIssuesIfInputIsEmpty(event: KeyboardEvent<HTMLInputElement>) {
-        const inputElement = event.target as HTMLInputElement; // Asserção de tipo
+        const inputElement = event.target as HTMLInputElement; 
         if (inputElement.value === "") {
             const response = await api.get(`/search/issues?q=repo:${data.login}/Github-blog`);
             const issues: Issue[] = response.data.items;
