@@ -8,6 +8,9 @@ align-items: center;
 text-align: start;
 border: none;
 padding: 0; 
+@media (max-width: 768px){
+  width: 90vw;
+}
 &:hover{
   cursor: pointer; 
   outline: 2px solid ${props => props.theme["base-label"]};

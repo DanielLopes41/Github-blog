@@ -11,7 +11,8 @@ justify-content: center;
 margin-top: -6rem;
 border-radius: 10px;
 @media (max-width:768px) {
-         width: 100%;
+         width: 95%;
+         margin-top: 2rem;
     }
 `
 export const ContentContainer = styled.div`
@@ -64,5 +65,14 @@ span{
     font-weight: ${props => props.theme.TextM.fontWeight};
     color: ${props => props.theme["base-span"]};
     white-space: nowrap;
+    @media (max-width:768px) {
+         width: 70%;
+         gap: 0.2rem;
+    }
+    p{
+        @media (max-width:768px) {
+         gap: 0.2rem;
+    }
+    }
 }
 `

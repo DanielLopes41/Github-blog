@@ -8,10 +8,6 @@ import { DataContext } from "../../../../contexts/DataContext";
 export function Profile() {
     const { data } = useContext(DataContext);
 
-    if (!data) {
-        return <div>Carregando...</div>; 
-    }
-
     return (
         <ProfileMain>
             <ProfileContainer>

@@ -10,12 +10,16 @@ align-items: center;
 margin-top: -6rem;
 position: relative;
 margin-inline: auto;
+@media (max-width:768px) {
+        width: 90vw;
+        margin-top: 1rem;
+    }
 img{
     border-radius: 8px;
     max-width: 9.25rem;
     max-height: 9.25rem;
     @media (max-width:768px) {
-        max-width: 6.25rem;
+        max-width: 4.25rem;
         max-height: 6.25rem;
     }
 }
@@ -27,6 +31,7 @@ export const ProfileContainer = styled.div`
  align-items: center;
  @media (max-width:768px) {
         width: 100%;
+        align-items: start;
     }
 `
 export const TextContainer = styled.div`
@@ -43,7 +48,7 @@ a{
     font-weight: ${props => props.theme.Link.fontWeight};
     color: ${props => props.theme.blue};
     display: flex;
-    justify-content: flex-end;
+    justify-content: start;
     align-items: center;
     gap: 0.6rem;
     text-decoration: none;
@@ -65,6 +70,9 @@ p{
     font-weight: ${props => props.theme.TextM.fontWeight};
     color: ${props => props.theme["base-text"]};
     margin-top: 0.8rem;
+    @media (max-width: 768px) {
+        font-size: 0.7rem;
+    }
 }
 `
 export const InfosContainer = styled.span`
@@ -73,6 +81,7 @@ gap: 1.5rem;
 @media (max-width:768px) {
        gap: 0.5rem;
        white-space: nowrap;
+       margin-left: -2rem;
     }
 p{
     font-size: ${props => props.theme.TextM.fontSize};

@@ -13,6 +13,10 @@ export const TextContainer = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-between;
+@media (max-width: 768px){
+  width: 90%;
+  margin: 0 auto;
+}
 h1{
     font-size: ${props => props.theme.TitleS.fontSize};
     font-family: ${props => props.theme.TitleS.fontFamily};
@@ -33,4 +37,8 @@ width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   gap: 2rem;
+  @media (max-width: 768px){
+  width: 90%;
+  margin: 0 auto;
+}
 `

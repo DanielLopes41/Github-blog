@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const SearchBarContainer = styled.div`
 width: 100%;
 margin-top: 1rem;
+@media (max-width: 768px){
+  width: 90%;
+  margin: 0 auto;
+}
 `
 export const SearchBarInput = styled.input`
 padding: 0.75rem 1rem;

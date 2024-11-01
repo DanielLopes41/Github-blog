@@ -17,6 +17,10 @@ font-size: ${props => props.theme.TextM.fontSize};
     line-height: ${props => props.theme.TextM.lineHeight};
     font-weight: ${props => props.theme.TextM.fontWeight};
     color: ${props => props.theme["base-text"]};
+ @media (max-width: 768px){
+    width: 95%;
+  margin: 0 auto;
+}
 img{
   max-width: 100%;
 }
@@ -25,6 +29,7 @@ h2,
 h3{
     color: ${props => props.theme.blue};
     padding-top: 2rem;
+    font-size: 1rem;
 }
 pre{
     background-color: ${props => props.theme["base-post"]};
