@@ -2,9 +2,10 @@ import * as DropdownMenu  from "@radix-ui/react-dropdown-menu";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  align-items: center;
-  background-size: cover;
   display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  justify-content: end;
   img {
     width: 100vw;
   }
@@ -15,10 +16,10 @@ export const HeaderContainer = styled.header`
 
 export const DropDownMenuButton = styled.button`
   position: absolute;
-  right: 300px;
-  top: 320px;
   border-radius: 200px;
   padding: 0.5rem;
+  margin-right: 10rem;
+  margin-bottom: 6rem;
   align-items: center;
   cursor: pointer;
   border: none;
