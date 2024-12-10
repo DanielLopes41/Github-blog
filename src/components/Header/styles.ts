@@ -18,8 +18,8 @@ export const DropDownMenuButton = styled.button`
   position: absolute;
   border-radius: 200px;
   padding: 0.5rem;
-  margin-right: 10rem;
-  margin-bottom: 6rem;
+  margin-right: 300px;
+  margin-bottom: 100px;
   align-items: center;
   cursor: pointer;
   border: none;
