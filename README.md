@@ -21,10 +21,6 @@ O **Github Blog** é um site dinâmico que transforma issues de um repositório 
 - 🚥 **React Router** para navegação.
 - 🖼️ **React Markdown** para renderizar conteúdo Markdown.
 
-## 🖼️ Demonstração
-
-![Exemplo de uma postagem no Github Blog](![image](https://github.com/user-attachments/assets/c525e2b5-0513-477d-ad57-bdc1d46a5620))  
-
 ## 📌 Como Usar
 
 1. Clone este repositório:  
