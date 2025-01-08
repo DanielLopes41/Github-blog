@@ -24,7 +24,6 @@ O **Github Blog** é um site dinâmico que transforma issues de um repositório 
 ## 🖼️ Demonstração
 
 ![Exemplo de uma postagem no Github Blog](![image](https://github.com/user-attachments/assets/c525e2b5-0513-477d-ad57-bdc1d46a5620))  
-*Captura de tela de um post renderizado a partir de uma issue do Github.*
 
 ## 📌 Como Usar
 
