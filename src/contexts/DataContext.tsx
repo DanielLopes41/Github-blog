@@ -39,7 +39,7 @@ interface DataProviderProps {
 
 export function DataProvider({ children }: DataProviderProps) {
     const [data, setData] = useState<UserDataProps>({} as UserDataProps); 
-    const [username, setUsername] = useState("danielpvpao");
+    const [username, setUsername] = useState("DanielLopes41");
     const [repoName, setRepoName] = useState("Github-blog");
     const [posts, updatePosts] = useState<IssueProps[]>([]);
 
