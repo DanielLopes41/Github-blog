@@ -1,50 +1,33 @@
+![chrome-capture-2025-1-8 (1)](https://github.com/user-attachments/assets/61ef1725-ade5-4d27-ae9a-12a403f64eef)
+
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 Github Blog
 
-Currently, two official plugins are available:
+O **Github Blog** é um site dinâmico que transforma issues de um repositório do Github em posts de blog! 📝✨  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Funcionalidades
 
-## Expanding the ESLint configuration
+- 🔍 **Busca personalizada**: Insira o nickname do usuário e o repositório desejado para carregar os posts.
+- 📋 **Posts dinâmicos**: Cada issue do repositório é exibida como uma postagem no blog.
+- 👤 **Informações do usuário**: Mostra foto de perfil, nome e número de seguidores do usuário do Github.
+- 💬 **Conteúdo rico**: Renderiza as issues como posts com suporte a Markdown.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ Tecnologias Utilizadas
 
-- Configure the top-level `parserOptions` property like this:
+- ⚛️ **React** para a interface dinâmica.
+- 📦 **API do Github** para buscar dados.
+- 🎨 **Styled-components** para estilização customizada.
+- 🚥 **React Router** para navegação.
+- 🖼️ **React Markdown** para renderizar conteúdo Markdown.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📌 Como Usar
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clone este repositório:  
+   ```bash
+    gh repo clone danielpvpao/Github-blog
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2.Instale as dependências:
+npm install
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+3.Inicie o servidor:
