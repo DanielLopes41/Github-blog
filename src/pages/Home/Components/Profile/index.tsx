@@ -20,7 +20,7 @@ export function Profile() {
                     <p>{data.bio}</p>
                     <InfosContainer>
                         <p><FontAwesomeIcon icon={faGithub} /> {data.login}</p> 
-                        <p><FontAwesomeIcon icon={faBuilding} /> {data.company ? data.company : 'undefined'}</p>
+                        <p><FontAwesomeIcon icon={faBuilding} /> {data.company ? data.company : '-'}</p>
                         <p><FontAwesomeIcon icon={faUserGroup} /> {data.followers} {data.followers === 1 ? 'seguidor' : 'seguidores'}</p>
                     </InfosContainer>
                 </TextContainer>
